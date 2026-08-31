@@ -1,0 +1,48 @@
+.modal__content_type_image {
+  max-width: 498px;
+  max-height: 610px;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  top: 16px;
+}
+
+.modal__close_type_clothes {
+  background: transparent;
+}
+
+.modal_image {
+  max-width: 498px;
+  max-height: 498px;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.modal__footer {
+  margin: 20px auto 32px 32px;
+  font-family: "Cabinet-grotesk";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal__caption {
+  margin: 0;
+}
+
+.modal__weather {
+  margin: 12px 0 0;
+}
+
+.modal__delete {
+  color: #ff4000;
+  border: none;
+  background-color: transparent;
+  align-self: start;
+  margin: 0 32px 0 auto;
+  font-weight: 700;
+}

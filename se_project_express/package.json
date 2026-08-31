@@ -1,0 +1,43 @@
+{
+  "name": "se_project_express",
+  "version": "0.1.0",
+  "description": "back-end development for WTWR",
+  "keywords": [
+    "weather",
+    "clothes",
+    "outfit"
+  ],
+  "homepage": "https://github.com/Connorcraig76/se_project_express#readme",
+  "bugs": {
+    "url": "https://github.com/Connorcraig76/se_project_express/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Connorcraig76/se_project_express.git"
+  },
+  "license": "ISC",
+  "author": "Connor Craig",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "lint": "npx eslint .",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "express": "^4.22.2",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^8.24.2",
+    "validator": "^13.15.35"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.10.2",
+    "eslint-plugin-import": "^2.32.0",
+    "nodemon": "^3.1.14",
+    "prettier": "^2.8.8"
+  }
+}
