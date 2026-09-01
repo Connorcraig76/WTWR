@@ -8,16 +8,20 @@ const getHeaders = () => {
   };
 };
 
-const checkResponse = (res) => {
+export const checkResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 };
 
+const request = (url, options) => {
+  return fetch(url, options).then(checkResponse);
+};
+
 export const getItems = () => {
-  return fetch(`${baseUrl}/items`).then(checkResponse);
+  return request(`${baseUrl}/items`);
 };
 
 export const addItem = ({ name, imageUrl, weather }) => {
-  return fetch(`${baseUrl}/items`, {
+  return request(`${baseUrl}/items`, {
     method: "POST",
     headers: getHeaders(),
     body: JSON.stringify({
@@ -25,37 +29,37 @@ export const addItem = ({ name, imageUrl, weather }) => {
       imageUrl,
       weather,
     }),
-  }).then(checkResponse);
+  });
 };
 
 export const removeItem = (itemID) => {
-  return fetch(`${baseUrl}/items/${itemID}`, {
+  return request(`${baseUrl}/items/${itemID}`, {
     method: "DELETE",
     headers: getHeaders(),
-  }).then(checkResponse);
+  });
 };
 
 export const updateUserProfile = ({ name, avatar }) => {
-  return fetch(`${baseUrl}/users/me`, {
+  return request(`${baseUrl}/users/me`, {
     method: "PATCH",
     headers: getHeaders(),
     body: JSON.stringify({
       name,
       avatar,
     }),
-  }).then(checkResponse);
+  });
 };
 
-export const addCardLike = (itemId, token) => {
-  return fetch(`${baseUrl}/items/${itemId}/likes`, {
+export const addCardLike = (itemId) => {
+  return request(`${baseUrl}/items/${itemId}/likes`, {
     method: "PUT",
     headers: getHeaders(),
-  }).then(checkResponse);
+  });
 };
 
-export const removeCardLike = (itemId, token) => {
-  return fetch(`${baseUrl}/items/${itemId}/likes`, {
+export const removeCardLike = (itemId) => {
+  return request(`${baseUrl}/items/${itemId}/likes`, {
     method: "DELETE",
     headers: getHeaders(),
-  }).then(checkResponse);
+  });
 };

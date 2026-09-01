@@ -5,8 +5,8 @@ import ClothesSection from "../ClothesSection/ClothesSection";
 export default function Profile({
   clothingItems,
   onCardClick,
+  onCardLike,
   handleAddClick,
-  handleCardLike,
   onSignOut,
   onEditProfileClick,
 }) {
@@ -15,9 +15,9 @@ export default function Profile({
       <SideBar onSignOut={onSignOut} onEditProfileClick={onEditProfileClick} />
       <ClothesSection
         onCardClick={onCardClick}
+        onCardLike={onCardLike}
         clothingItems={clothingItems}
         handleAddClick={handleAddClick}
-        handleCardLike={handleCardLike}
       />
     </section>
   );
