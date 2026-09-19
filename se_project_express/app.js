@@ -1,7 +1,13 @@
+require("dotenv").config();
+
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const { errors } = require("celebrate");
 const mainRouter = require("./routes/index");
+const errorHandler = require("./middlewares/error-handler.js");
+const NotFoundError = require("./errors/not-found-error");
+const { requestLogger, errorLogger } = require("./middlewares/logger");
 
 const app = express();
 const { PORT = 3001 } = process.env;
@@ -16,11 +22,19 @@ mongoose
 app.use(cors());
 app.use(express.json());
 
+app.use(requestLogger);
+
 app.use("/", mainRouter);
 
-app.use((req, res) => {
-  res.status(404).send({ message: "Requested resource not found" });
+app.use((req, res, next) => {
+  next(new NotFoundError("Requested resource not found"));
 });
+
+app.use(errorLogger);
+
+app.use(errors());
+
+app.use(errorHandler);
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
