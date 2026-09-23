@@ -22,6 +22,10 @@ Technologies Used:
 
     - Version Control: GitHub
 
-Demo Video - https://www.loom.com/share/0bf7410d98924e8e82496d3c0055b1e2
+Back-end Demo Video - https://www.loom.com/share/0bf7410d98924e8e82496d3c0055b1e2
+
+Front-end Demo Video - https://www.loom.com/share/0bf7410d98924e8e82496d3c0055b1e2
 
 Github link - https://github.com/Connorcraig76/se_project_react.git
+
+Project Link - https://whatweatherweartowear.jumpingcrab.com/

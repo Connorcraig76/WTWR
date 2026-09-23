@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3001";
+import { baseUrl } from "./constants";
 
 const getHeaders = () => {
   const token = localStorage.getItem("jwt");
