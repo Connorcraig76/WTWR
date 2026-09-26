@@ -10,10 +10,11 @@ const NotFoundError = require("./errors/not-found-error");
 const { requestLogger, errorLogger } = require("./middlewares/logger");
 
 const app = express();
-const { PORT = 3001 } = process.env;
+const { PORT = 3001, MONGO_URI = "mongodb://127.0.0.1:27017/wtwr_db" } =
+  process.env;
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/wtwr_db")
+  .connect(MONGO_URI)
   .then(() => {
     console.log("Connected to DB");
   })
