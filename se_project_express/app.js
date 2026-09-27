@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const { errors } = require("celebrate");
 const mainRouter = require("./routes/index");
-const errorHandler = require("./middlewares/error-handler.js");
+const errorHandler = require("./middlewares/error-handler");
 const NotFoundError = require("./errors/not-found-error");
 const { requestLogger, errorLogger } = require("./middlewares/logger");
 
@@ -24,6 +24,12 @@ app.use(cors());
 app.use(express.json());
 
 app.use(requestLogger);
+
+app.get("/crash-test", () => {
+  setTimeout(() => {
+    throw new Error("Server will crash now");
+  }, 0);
+});
 
 app.use("/", mainRouter);
 

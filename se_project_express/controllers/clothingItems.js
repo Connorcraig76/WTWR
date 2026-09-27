@@ -38,7 +38,7 @@ const deleteItem = (req, res, next) => {
       );
     })
     .catch((err) => {
-      if (err.name === "DocumentNotFoundError" || err.name === "CastError") {
+      if (err.name === "DocumentNotFoundError") {
         next(new NotFoundError("Item ID not found"));
       } else if (err.name === "CastError") {
         next(new BadRequestError("Invalid ID format"));
