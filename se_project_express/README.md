@@ -32,7 +32,7 @@ Technologies & Techniques Used:
 
 -Postman & GitHub Actions: Integrated for end-to-end API validation, automated integration testing, and CI pipeline checks.
 
-Demo Video -
+Demo Video - https://www.loom.com/share/fb353e5d141f430cb373a2409e5855f3
 
 github link-https://github.com/Connorcraig76/se_project_express.git
 
